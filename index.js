@@ -27,11 +27,23 @@
 
 function submitData(username, userEmail){
     return fetch('http://localhost:3000/users', {
-        method: 'POST',
-        header: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({username, userEmail}),
+        method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify( {
+        username,
+        userEmail
+      } )
+    } )
+    .then( function ( response ) {
+      return response.json()
+    } )
+    .then( function ( object ) {
+      document.body.innerHTML = object[ "id" ]
+    } ).catch(function (error) {
+        alert("Bad things! Ragnarők!");
+        console.log(error.message);
     })
 }
