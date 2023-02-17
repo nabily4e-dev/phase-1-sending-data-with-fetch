@@ -25,3 +25,13 @@
 //         console.log(error.message);
 //     });
 
+function submitData(username, userEmail){
+    return fetch('http://localhost:3000/users', {
+        method: 'POST',
+        header: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({username, userEmail}),
+    })
+}
