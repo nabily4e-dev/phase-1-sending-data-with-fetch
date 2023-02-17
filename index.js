@@ -1,11 +1,14 @@
 // Add your code here
 const configurationObject = {
-    method: 'POST',
+    method: "POST",
     headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json",
     },
-    body: JSON.stringify({dogName: "Byron", dogBreed: "Poodle",}),
-};
-
-fetch('http://localhost:3000/dogs', configurationObject);
+    body: JSON.stringify({
+      dogName: "Byron",
+      dogBreed: "Poodle",
+    }),
+  };
+  
+  fetch("http://localhost:3000/dogs", configurationObject);
